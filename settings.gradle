@@ -1,0 +1,3 @@
+rootProject.name = "Native Android Test"
+include ':app'
+include ':mylibrary'
