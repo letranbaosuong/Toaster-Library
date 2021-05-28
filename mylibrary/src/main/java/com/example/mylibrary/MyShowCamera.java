@@ -18,11 +18,9 @@ public class MyShowCamera {
             ActivityCompat.requestPermissions(activity,
                     new String[]{Manifest.permission.CAMERA},
                     1);
-
-            _showCamera(activity);
-        } else {
-            _showCamera(activity);
         }
+
+        _showCamera(activity);
 
 
     }
