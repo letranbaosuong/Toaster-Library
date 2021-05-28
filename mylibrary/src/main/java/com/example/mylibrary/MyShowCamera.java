@@ -20,10 +20,6 @@ public class MyShowCamera {
         if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
         ) {
             Toast.makeText(activity, "Vui lòng cấp quyền Camera.", Toast.LENGTH_SHORT).show();
-            if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
-            ) {
-                _showCamera(activity);
-            }
         } else {
             _showCamera(activity);
         }
