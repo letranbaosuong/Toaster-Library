@@ -1,14 +1,20 @@
 package com.example.mylibrary;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.provider.MediaStore;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+
 import java.util.Objects;
 
 public class MyShowCamera {
     public static void ShowCamera(Activity activity) {
+        ActivityCompat.requestPermissions(activity,
+                new String[]{Manifest.permission.CAMERA},
+                1);
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (intent.resolveActivity(Objects.requireNonNull(activity).getPackageManager()) != null) {
             activity.startActivityForResult(intent, 100);
