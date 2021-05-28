@@ -13,18 +13,13 @@ import java.util.Objects;
 
 public class MyShowCamera {
     public static void ShowCamera(Activity activity) {
+        ActivityCompat.requestPermissions(activity,
+                new String[]{Manifest.permission.CAMERA},
+                1);
+
         if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
         ) {
-            ActivityCompat.requestPermissions(activity,
-                    new String[]{Manifest.permission.CAMERA},
-                    1);
-            if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
-            ) {
-                Toast.makeText(activity, "Vui lòng cấp quyền Camera.", Toast.LENGTH_SHORT).show();
-
-            } else {
-                _showCamera(activity);
-            }
+            Toast.makeText(activity, "Vui lòng cấp quyền Camera.", Toast.LENGTH_SHORT).show();
         } else {
             _showCamera(activity);
         }
