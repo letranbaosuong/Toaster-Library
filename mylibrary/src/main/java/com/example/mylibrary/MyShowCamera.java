@@ -18,9 +18,10 @@ public class MyShowCamera {
             ActivityCompat.requestPermissions(activity,
                     new String[]{Manifest.permission.CAMERA},
                     1);
+            _showCamera(activity);
+        } else {
+            Toast.makeText(activity, "Vui lòng cấp quyền Camera.", Toast.LENGTH_SHORT).show();
         }
-
-        _showCamera(activity);
 
 
     }
